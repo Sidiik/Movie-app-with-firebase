@@ -56,7 +56,12 @@ const App = () => {
         </button>
       </div>
       <h5 className="text-center m-auto rounded p-2 w-50 ">Movies List</h5>
-      {isLoading && <div class="spinner-border m-auto" role="status"></div>}
+      {isLoading && (
+        <div
+          className="spinner-border d-flex justify-content-center"
+          role="status"
+        ></div>
+      )}
       {!isLoading && (
         <div className="card" style={{ margin: "auto", width: "50%" }}>
           {movies.map((movie) => (

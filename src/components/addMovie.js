@@ -6,11 +6,16 @@ const MoviesForm = ({ onAddMovie }) => {
 
   function submitHandler(e) {
     e.preventDefault();
+    if (name.trim().length === 0 || date.trim().length === 0) {
+      return;
+    }
     const newMovie = {
       title: name,
       date: date,
     };
     onAddMovie(newMovie);
+    setName("");
+    setDate("");
   }
 
   return (
